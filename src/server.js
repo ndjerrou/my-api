@@ -31,6 +31,6 @@ app.post("/products", (req, res) => {
   res.status(201).send(products);
 });
 
-app.listen(process.env.port || 3000, () =>
+app.listen(process.env.PORT || 3000, () =>
   console.log("Listenning on port 3000...")
 );
