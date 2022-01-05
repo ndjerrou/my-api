@@ -1,6 +1,6 @@
 const express = require("express");
 
-const fs = require("fs");
+const fs = require("fs"); // file system
 const path = require("path");
 
 const pathProductsJSON = path.join(__dirname, "./data/products.json");
@@ -31,4 +31,6 @@ app.post("/products", (req, res) => {
   res.status(201).send(products);
 });
 
-app.listen(3000, () => console.log("Listenning on port 3000..."));
+app.listen(process.env.port || 3000, () =>
+  console.log("Listenning on port 3000...")
+);
